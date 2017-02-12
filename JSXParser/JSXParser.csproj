@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D3B0661C-B3A2-437F-9140-0F36BAC3DFCC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JSXParser</RootNamespace>
+    <AssemblyName>JSXParser</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\AST\Expression\ArrayExpression.cs" />
+    <Compile Include="src\AST\Expression\AssignmentExpression.cs" />
+    <Compile Include="src\AST\Expression\BinaryExpression.cs" />
+    <Compile Include="src\AST\Expression\CallExpression.cs" />
+    <Compile Include="src\AST\Expression\ConditionalExpression.cs" />
+    <Compile Include="src\AST\Expression\Expression.cs" />
+    <Compile Include="src\AST\Expression\FunctionExpression.cs" />
+    <Compile Include="src\AST\Expression\Identifier.cs" />
+    <Compile Include="src\AST\Expression\IExpression.cs" />
+    <Compile Include="src\AST\Expression\Literal.cs" />
+    <Compile Include="src\AST\Expression\LogicalExpression.cs" />
+    <Compile Include="src\AST\Expression\MemberExpression.cs" />
+    <Compile Include="src\AST\Expression\NewExpression.cs" />
+    <Compile Include="src\AST\Expression\ObjectExpression.cs" />
+    <Compile Include="src\AST\Expression\ParenthesizedExpression.cs" />
+    <Compile Include="src\AST\Expression\SequenceExpression.cs" />
+    <Compile Include="src\AST\Expression\ThisExpression.cs" />
+    <Compile Include="src\AST\Expression\UnaryExpression.cs" />
+    <Compile Include="src\AST\Expression\UpdateExpression.cs" />
+    <Compile Include="src\AST\Functions\IFunction.cs" />
+    <Compile Include="src\AST\INode.cs" />
+    <Compile Include="src\AST\Location.cs" />
+    <Compile Include="src\AST\Node.cs" />
+    <Compile Include="src\AST\NodeType.cs" />
+    <Compile Include="src\AST\Operator\AssignmentOperator.cs" />
+    <Compile Include="src\AST\Operator\Associativity.cs" />
+    <Compile Include="src\AST\Operator\BinaryOperator.cs" />
+    <Compile Include="src\AST\Operator\LogicalOperator.cs" />
+    <Compile Include="src\AST\Operator\UnaryOperator.cs" />
+    <Compile Include="src\AST\Partten\IPattern.cs" />
+    <Compile Include="src\AST\Position.cs" />
+    <Compile Include="src\AST\Program.cs" />
+    <Compile Include="src\AST\Property.cs" />
+    <Compile Include="src\AST\PropertyKind.cs" />
+    <Compile Include="src\AST\Statements\BlockStatement.cs" />
+    <Compile Include="src\AST\Statements\Choice\IfStatement.cs" />
+    <Compile Include="src\AST\Statements\Choice\SwitchCase.cs" />
+    <Compile Include="src\AST\Statements\Choice\SwitchStatement.cs" />
+    <Compile Include="src\AST\Statements\ControlFlow\BreakStatement.cs" />
+    <Compile Include="src\AST\Statements\ControlFlow\ContinueStatement.cs" />
+    <Compile Include="src\AST\Statements\ControlFlow\LabeledStatement.cs" />
+    <Compile Include="src\AST\Statements\ControlFlow\ReturnStatement.cs" />
+    <Compile Include="src\AST\Statements\DebuggerStatement.cs" />
+    <Compile Include="src\AST\Statements\Declarations\Declaration.cs" />
+    <Compile Include="src\AST\Statements\Declarations\FunctionDeclaration.cs" />
+    <Compile Include="src\AST\Statements\Declarations\VariableDeclaration.cs" />
+    <Compile Include="src\AST\Statements\Declarations\VariableDeclarator.cs" />
+    <Compile Include="src\AST\Statements\EmptyStatement.cs" />
+    <Compile Include="src\AST\Statements\Exceptions\CatchClause.cs" />
+    <Compile Include="src\AST\Statements\Exceptions\ThrowStatement.cs" />
+    <Compile Include="src\AST\Statements\Exceptions\TryStatement.cs" />
+    <Compile Include="src\AST\Statements\ExpressionStatement.cs" />
+    <Compile Include="src\AST\Statements\IStatement.cs" />
+    <Compile Include="src\AST\Statements\Loops\DoWhileStatement.cs" />
+    <Compile Include="src\AST\Statements\Loops\ForInStatement.cs" />
+    <Compile Include="src\AST\Statements\Loops\ForStatement.cs" />
+    <Compile Include="src\AST\Statements\Loops\WhileStatement.cs" />
+    <Compile Include="src\AST\Statements\Statement.cs" />
+    <Compile Include="src\AST\Statements\WithStatement.cs" />
+    <Compile Include="src\ExpressionParser.cs" />
+    <Compile Include="src\IdentifierHelper.cs" />
+    <Compile Include="src\Parser.cs" />
+    <Compile Include="src\Scaner.cs" />
+    <Compile Include="src\JSX\HtmlEntity.cs" />
+    <Compile Include="src\JSX\JSXAttribute.cs" />
+    <Compile Include="src\JSX\JSXBoundaryElement.cs" />
+    <Compile Include="src\JSX\JSXClosingElement.cs" />
+    <Compile Include="src\JSX\JSXElement.cs" />
+    <Compile Include="src\JSX\JSXEmptyExpression.cs" />
+    <Compile Include="src\JSX\JSXExpressionContainer.cs" />
+    <Compile Include="src\JSX\JSXIdentifier.cs" />
+    <Compile Include="src\JSX\JSXMemberExpression.cs" />
+    <Compile Include="src\JSX\JSXNamespacedName.cs" />
+    <Compile Include="src\JSX\JSXOpeningElement.cs" />
+    <Compile Include="src\LabelInfo.cs" />
+    <Compile Include="src\JSParser.cs" />
+    <Compile Include="src\PositionedWriter.cs" />
+    <Compile Include="src\JSScaner.cs" />
+    <Compile Include="src\StatementParser.cs" />
+    <Compile Include="src\SyntaxException.cs" />
+    <Compile Include="src\Token.cs" />
+    <Compile Include="src\TokenContext.cs" />
+    <Compile Include="src\TokenType.cs" />
+    <Compile Include="src\TokenTypeInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
